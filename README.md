@@ -1,9 +1,24 @@
 # Load Testing Tool
 
-Tool to generate load to a web page using[ hey](https://github.com/rakyll/hey)
+Handy tool to generate load to a web page using [hey](https://github.com/rakyll/hey)
+
+## Build Container
 
 ```ssh
+docker build -t devtool/loadtest:latest .
+```
 
+## Run Container in interactive mode
+
+```ssh
+docker run -it --rm --name devtool -t devtool/loadtest:latest
+```
+
+## Options and usage
+
+Once you are in the container you can use `hey` with the following options
+
+```ssh
 Usage: hey [options...] <url>
 
 Options:
@@ -39,3 +54,7 @@ Options:
   -cpus                 Number of used cpu cores.
                         (default for current machine is 8 cores)
 ```
+
+## Authors
+
+* Marcelo Zambrana
